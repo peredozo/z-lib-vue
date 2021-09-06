@@ -1,0 +1,28 @@
+/* added to body when dialog is opened */
+.z-dialogs-body-have-dialogs { overflow: hidden; }
+
+/* main */
+.z-dialogs { position: relative; }
+.z-dialogs .z-dialogs-item { position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; box-sizing: border-box; }
+.z-dialogs .z-dialogs-item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); box-sizing: border-box; }
+.z-dialogs .z-dialogs-wrap { position: relative; min-width: 100%; max-width: 100%; padding: 10px; box-sizing: border-box; overflow: auto; }
+.z-dialogs .z-dialogs-dialog { position: relative; margin: auto; background-color: #FFF; color: #111; padding: 20px; max-width: 400px; width: 100%; box-sizing: border-box; border-radius: 3px; }
+.z-dialogs .z-dialogs-closer { position: absolute; top: 0; right: 0; padding: 5px; cursor: pointer; color: #111; opacity: 0.5; }
+.z-dialogs .z-dialogs-closer>svg { display: block; width: 10px; height: 10px; }
+.z-dialogs .z-dialogs-closer:hover { opacity: 1; }
+
+/* animation */
+.z-dialogs .z-dialogs-enter-active, 
+.z-dialogs .z-dialogs-leave-active { transition: all 0.1s linear; }
+.z-dialogs .z-dialogs-enter, /* Vue 2 */
+.z-dialogs .z-dialogs-enter-from, /* Vue 3 */
+.z-dialogs .z-dialogs-leave-to { opacity: 0; }
+.z-dialogs .z-dialogs-enter-active .z-dialogs-dialog, 
+.z-dialogs .z-dialogs-leave-active .z-dialogs-dialog { transition: all 0.1s linear; }
+.z-dialogs .z-dialogs-enter .z-dialogs-dialog, /* Vue 2 */
+.z-dialogs .z-dialogs-enter-from .z-dialogs-dialog, /* Vue 3 */
+.z-dialogs .z-dialogs-leave-to .z-dialogs-dialog { opacity: 0; transform: scale(0.5); }
+
+/* subclass for 'fullpage' dialogs */
+.z-dialogs .z-dialogs-item.fullpage .z-dialogs-wrap { flex: 1; }
+.z-dialogs .z-dialogs-item.fullpage .z-dialogs-dialog { max-width: none; width: 100%; min-height: 100%; }

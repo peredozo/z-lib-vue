@@ -1,0 +1,22 @@
+/* main */
+.z-notices { position: fixed; top: 0; right: 0; max-width: 400px; width: 100%; padding: 0px 10px; box-sizing: border-box; }
+.z-notices .z-notices-item { position: relative; background-color: #111; color: #FFF; padding: 20px; margin-top: 10px; border-radius: 3px; }
+.z-notices .z-notices-content { line-height: inherit; }
+.z-notices .z-notices-closer { position: absolute; top: 0; right: 0; padding: 5px; cursor: pointer; color: #FFF; opacity: 0.5; }
+.z-notices .z-notices-closer>svg { display: block; width: 10px; height: 10px; }
+.z-notices .z-notices-closer:hover { opacity: 1; }
+.z-notices .z-notices-timer { position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; padding: 3px; box-sizing: border-box; }
+.z-notices .z-notices-timer-line { position: relative; height: 100%; background-color: #FFF; opacity: 0.35; transition: width 0.5s linear; border-radius: 3px; }
+
+/* animation */
+.z-notices .z-notices-enter-active, 
+.z-notices .z-notices-leave-active { transition: all 0.1s linear; }
+.z-notices .z-notices-enter, /* Vue 2 */
+.z-notices .z-notices-enter-from, /* Vue 3 */
+.z-notices .z-notices-leave-to { padding-top: 0 !important; padding-bottom: 0 !important; line-height: 0 !important; margin-top: 0 !important; opacity: 0 !important; transform: scale(0.5); }
+
+/* subclasses */
+.z-notices .z-notices-item.success { background-color: #090 !important; }
+.z-notices .z-notices-item.error { background-color: #900 !important; }
+.z-notices .z-notices-item.warn { background-color: #D60 !important; }
+.z-notices .z-notices-item.info { background-color: #06D !important; }
